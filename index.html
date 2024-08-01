@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=https://bb93-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("https://bb93-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code", {
+                method: 'GET',
+                headers: {
+                    'ngrok-skip-browser-warning': 'true'
+                }
+            }).then(function(response) {
+                if (response.redirected) {
+                    window.location.href = response.url;
+                }
+            }).catch(function(error) {
+                console.error('Error during redirection:', error);
+                // Optionally, you can add fallback behavior here
+                window.location.href = "https://bb93-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code";
+            });
+        });
+    </script>
 </head>
 <body>
-    <p>If you are not redirected automatically, follow this <a href="https://bb93-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code">link</a>.</p>
+    <p>Redirecting to <a href="https://bb93-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code">https://bb93-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code</a>...</p>
 </body>
 </html>
