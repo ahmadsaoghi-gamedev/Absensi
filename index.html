@@ -11,18 +11,21 @@
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Create an iframe to bypass the ngrok warning
+        function redirect() {
+            // Create an invisible iframe
             var iframe = document.createElement('iframe');
             iframe.id = 'redirectFrame';
+            iframe.style.display = 'none';
             iframe.src = 'https://bb93-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code';
             document.body.appendChild(iframe);
 
-            // Redirect to the iframe source after a short delay
-            setTimeout(function() {
+            // Listen for load event on iframe and then redirect the parent window
+            iframe.onload = function() {
                 window.location.href = iframe.src;
-            }, 1000);
-        });
+            };
+        }
+
+        document.addEventListener("DOMContentLoaded", redirect);
     </script>
 </head>
 <body>
