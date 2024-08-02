@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
-        // Fungsi untuk melakukan redirect
         function redirect() {
-            window.location.replace("https://a3ef-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code");
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://a3ef-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code', true);
+            xhr.setRequestHeader('ngrok-skip-browser-warning', '1');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    // Redirect setelah mendapatkan respons
+                    window.location.replace('https://a3ef-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code');
+                }
+            };
+            xhr.send();
         }
-        // Panggil fungsi redirect setelah halaman dimuat
         window.onload = redirect;
     </script>
     <style>
@@ -34,7 +41,13 @@
 <body>
     <div class="container">
         <h1>Redirecting...</h1>
-        <p>If you are not redirected automatically, <a href="https://a3ef-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code">click here</a>.</p>
+        <p>If you are not redirected automatically, <a href="https://a3ef-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code" id="manual-redirect">click here</a>.</p>
     </div>
+    <script>
+        document.getElementById('manual-redirect').addEventListener('click', function(e) {
+            e.preventDefault();
+            redirect();
+        });
+    </script>
 </body>
 </html>
