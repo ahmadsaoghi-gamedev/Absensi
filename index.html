@@ -3,22 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
-    <script>
-        function redirect() {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'https://a3ef-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code', true);
-            xhr.setRequestHeader('ngrok-skip-browser-warning', '1');
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4) {
-                    // Redirect setelah mendapatkan respons
-                    window.location.replace('https://a3ef-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code');
-                }
-            };
-            xhr.send();
-        }
-        window.onload = redirect;
-    </script>
+    <title>Redirecting to External Site</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,21 +17,63 @@
         .container {
             text-align: center;
             background: white;
-            padding: 20px;
+            padding: 30px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        #countdown {
+            font-weight: bold;
+            color: #007bff;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Redirecting...</h1>
-        <p>If you are not redirected automatically, <a href="https://a3ef-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code" id="manual-redirect">click here</a>.</p>
+        <h1>Redirecting to External Site</h1>
+        <p>You are about to be redirected to an external site hosted on ngrok. This site is for demonstration purposes.</p>
+        <p>Please be cautious about entering sensitive information on external sites.</p>
+        <p>You will be redirected in <span id="countdown">5</span> seconds.</p>
+        <a href="https://a3ef-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code" class="btn" id="redirect-btn">Continue to Site</a>
     </div>
+
     <script>
-        document.getElementById('manual-redirect').addEventListener('click', function(e) {
+        let countdown = 5;
+        const countdownDisplay = document.getElementById('countdown');
+        const redirectBtn = document.getElementById('redirect-btn');
+
+        const timer = setInterval(() => {
+            countdown--;
+            countdownDisplay.textContent = countdown;
+            if (countdown <= 0) {
+                clearInterval(timer);
+                window.location.href = 'https://a3ef-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code';
+            }
+        }, 1000);
+
+        redirectBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            redirect();
+            clearInterval(timer);
+            window.location.href = 'https://a3ef-180-254-74-252.ngrok-free.app/absensi-sekolah-qr-code';
         });
     </script>
 </body>
