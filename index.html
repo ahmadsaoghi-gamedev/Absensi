@@ -53,7 +53,7 @@
     <p>Anda akan diarahkan ke web absensi sekolah. Sistem ini menggunakan layanan ngrok untuk akses sementara.</p>
     <p>Untuk melanjutkan ke web absensi, silakan klik tombol "Visit Site" di bawah ini.</p>
     <p>Halaman akan dialihkan secara otomatis dalam <span id="countdown">3</span> detik.</p>
-    <a href="https://236c-180-254-67-65.ngrok-free.app/absensi-sekolah-qr-code" class="btn" id="redirect-btn">Kunjungi Web Absensi</a>
+    <a href="https://77d1-180-254-67-65.ngrok-free.app/absensi-sekolah-qr-code" class="btn" id="redirect-btn">Kunjungi Web Absensi</a>
  </div>
 
     <script>
@@ -66,14 +66,14 @@
             countdownDisplay.textContent = countdown;
             if (countdown <= 0) {
                 clearInterval(timer);
-                window.location.href = 'https://236c-180-254-67-65.ngrok-free.app/absensi-sekolah-qr-code';
+                window.location.href = 'https://77d1-180-254-67-65.ngrok-free.app/absensi-sekolah-qr-code';
             }
         }, 1000);
 
         redirectBtn.addEventListener('click', (e) => {
             e.preventDefault();
             clearInterval(timer);
-            window.location.href = 'https://236c-180-254-67-65.ngrok-free.app/absensi-sekolah-qr-code';
+            window.location.href = 'https://77d1-180-254-67-65.ngrok-free.app/absensi-sekolah-qr-code';
         });
     </script>
 </body>
