@@ -3,78 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Redirecting to External Site</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            text-align: center;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-        }
-        #countdown {
-            font-weight: bold;
-            color: #007bff;
-        }
-    </style>
+    <script>
+        window.location.replace("https://77d1-180-254-67-65.ngrok-free.app/absensi-sekolah-qr-code");
+    </script>
 </head>
 <body>
-    <div class="container">
-    <h1>Menuju Web Absensi</h1>
-    <p>Anda akan diarahkan ke web absensi sekolah. Sistem ini menggunakan layanan ngrok untuk akses sementara.</p>
-    <p>Untuk melanjutkan ke web absensi, silakan klik tombol "Visit Site" di bawah ini.</p>
-    <p>Halaman akan dialihkan secara otomatis dalam <span id="countdown">3</span> detik.</p>
-    <a href="https://77d1-180-254-67-65.ngrok-free.app/absensi-sekolah-qr-code" class="btn" id="redirect-btn">Kunjungi Web Absensi</a>
- </div>
-
-    <script>
-        let countdown = 3;
-        const countdownDisplay = document.getElementById('countdown');
-        const redirectBtn = document.getElementById('redirect-btn');
-
-        const timer = setInterval(() => {
-            countdown--;
-            countdownDisplay.textContent = countdown;
-            if (countdown <= 0) {
-                clearInterval(timer);
-                window.location.href = 'https://77d1-180-254-67-65.ngrok-free.app/absensi-sekolah-qr-code';
-            }
-        }, 1000);
-
-        redirectBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            clearInterval(timer);
-            window.location.href = 'https://77d1-180-254-67-65.ngrok-free.app/absensi-sekolah-qr-code';
-        });
-    </script>
+    <p>Jika Anda tidak diarahkan secara otomatis, silakan klik <a href="https://77d1-180-254-67-65.ngrok-free.app/absensi-sekolah-qr-code">di sini</a>.</p>
 </body>
 </html>
