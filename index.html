@@ -8,10 +8,19 @@
     <meta http-equiv="Expires" content="0">
     <title>Redirecting to External Site</title>
     <script>
-        window.location.replace("https://69df-180-254-75-3.ngrok-free.app/absensi-sekolah-qr-code");
+        // Menyembunyikan peringatan ngrok
+        window.addEventListener('load', function() {
+            var warningElement = document.querySelector('[id^="ngrok-"]');
+            if (warningElement) {
+                warningElement.style.display = 'none';
+            }
+        });
+        
+        // Mengarahkan ke URL baru
+        window.location.replace("https://69df-180-254-75-3.ngrok-free.app/absensi-sekolah-qr-code/");
     </script>
 </head>
 <body>
-    <p>Jika Anda tidak diarahkan secara otomatis, silakan klik <a href="https://69df-180-254-75-3.ngrok-free.app/absensi-sekolah-qr-code">di sini</a>.</p>
+    <p>Jika Anda tidak diarahkan secara otomatis, silakan klik <a href="https://69df-180-254-75-3.ngrok-free.app/absensi-sekolah-qr-code/">di sini</a>.</p>
 </body>
 </html>
